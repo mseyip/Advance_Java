@@ -19,10 +19,6 @@ public class Main {
 
        // useEnumType(aaaaa);//enum type dışında değer girilemez CTE
 
-
-
-
-
     }
      public static void useNonEnumVariable(int n){
         if(n==TransactionTypeConstant.DEPOSIT){
@@ -39,6 +35,16 @@ public class Main {
      }
 
      public static void useEnumType(TransactionTypeEnum transactionType){
+//        if(transactionType.getCode()==10) {
+//            System.out.println("Para yatırılıyor...");
+//        }
+
+         // ordinal kullanmanın riski: Herhangi bir güncelleme durumunda enum sırasının(ekleme/çıkarma) değişme durumu...
+
+//         if (transactionType.ordinal()==0) {
+//             System.out.println("Para yatırılıyor...");
+//         }
+
         if(transactionType==TransactionTypeEnum.DEPOSIT){
             System.out.println("Para yatırılıyor...");
         } else if (transactionType==TransactionTypeEnum.WITHDRAW) {
@@ -50,6 +56,10 @@ public class Main {
         }else if (transactionType==TransactionTypeEnum.OTHER){
             System.out.println("Diğer işlemler...");
         }
+
+         System.out.println("Enum name :" + transactionType.name()); // enumType'ın ismini gösterir.
+         System.out.println("Enum sırası:" + transactionType.ordinal()); // enumType'ın sırasını gösterir.
+
      }
 
 }
