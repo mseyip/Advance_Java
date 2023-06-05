@@ -1,5 +1,5 @@
 package Threads;
-//Thread bir processin parçasıdır, birden fazla thread kullandığımızda
+//Thread bir proccessin parçasıdır, birden fazla thread kullandığımızda
 //multithreading yaparak eş zamanlı görevler yapabiliriz, CPU en verimli şekilde kullanabiliriz.
 public class ThreadCreationWays {
     public static void main(String[] args) {
@@ -34,7 +34,8 @@ public class ThreadCreationWays {
                 System.out.println("Bu thread isimsiz class ile oluşturuldu.");
             }
         });
-        thread3.setName("threadcik");
+        thread3.setName("threadcik"); // Eğer bir thread'e biz bir isim vermezsek otomatik olarak Thread Class'ından
+        // thread sırasına göre numara verilir. Eğer biz bir isim vermek istersek setName kullanarak bu işlemi gerçekleştirebiliriz.
         thread3.start();
 
         //annonymous(isimsiz) class ile thread oluşturma:2
