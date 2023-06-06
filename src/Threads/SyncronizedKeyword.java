@@ -1,10 +1,10 @@
 package Threads;
 //metod içerisinde istenmeyen sonuca sebep olmayan kodlar da varsa
 
-//Bütün metodu kilitlemek yerine, metot icerisinde kilitlemek istedigimiz
+//Bütün methodu kilitlemek yerine, method icerisinde kilitlemek istedigimiz
 // yeri bir block araligina alip  synchronized (this) keyword unu kullaniyoruz
 
-//syncronized keywordü sadece metodlar ve bloklar için kullanılabilir.
+//syncronized keywordü sadece methodlar ve bloklar için kullanılabilir.
 public class SyncronizedKeyword {
     public static void main(String[] args) {
         Brackets2 brackets2=new Brackets2();
@@ -37,7 +37,7 @@ public class SyncronizedKeyword {
         }
 
         long endTime=System.currentTimeMillis();
-        //metod syncronized iken
+        //method syncronized iken
        // System.out.println("Geçen süre :"+(endTime-startTime));//5579
 
         //syncronized block
@@ -47,11 +47,10 @@ public class SyncronizedKeyword {
 
 }
 class Brackets2{
-    //[ [ [ [ [ ] ] ] ] ] şeklini ekrana yazdıran bir metod
+    //[ [ [ [ [ ] ] ] ] ] şeklini ekrana yazdıran bir method
     public void generateBrackets(){
         //this:bu classtan üretilen obje
-        //bloğa erişen thread için objeyi kilitle işlem
-        //tamamlandığında serbest bırak
+        //bloğa erişen thread için objeyi kilitle(monitör et) işlem tamamlandığında serbest bırak
         synchronized (this) {
             for (int i = 1; i <= 10; i++) {
                 if (i <= 5) {

@@ -8,7 +8,7 @@ wait ve notify monitor edilen(kilitlenen) obje için çağrılır.
 */
 public class WaitNotify {
 
-    public static int balance=0;// her iki threadde bakiyeyi değiştirmeye çalışıyor.
+    public static int balance=0;// her iki thread de bakiyeyi değiştirmeye çalışıyor.
 
     public static void main(String[] args) {
 
@@ -41,7 +41,7 @@ public class WaitNotify {
     }
 
 
-    //para çekme işlemi için metod oluşturalım
+    // para çekme işlemi için method oluşturalım
     public synchronized void withdraw(int amount){
         System.out.println(Thread.currentThread().getName()+" para çekmek istiyor.");
         if(balance<=0 || balance<amount){
@@ -54,7 +54,7 @@ public class WaitNotify {
                 throw new RuntimeException(e);
             }
         }
-//bakiye yeterli ise
+    // bakiye yeterli ise
         if(balance>=amount){
             balance=balance-amount;
             System.out.println("Para çekme işlemi gerçekleşti... Mevcut bakiye : "+balance);
